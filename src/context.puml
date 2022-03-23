@@ -1,0 +1,49 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Context.puml
+
+
+
+LAYOUT_WITH_LEGEND()
+HIDE_STEREOTYPE()
+
+title Vue contexte POC SSI
+
+Person(usa, "Usager", "Un usager du portail VD. L'usager possède un portefeuille mobile")
+System_Ext(waet,"[Portefeuille]Contient les preuves et les clés de l'usager")
+
+System_Boundary(pvd, "Portail sécurisé [https://prestations.vd.ch/]"){
+    System(pep, "Prestation", "Prestation demande d'un extrait des poursuites") 
+    System(peid, "Prestation", "Prestation demande d'une identité")
+    System(age, "Agent", "[Couche 2] Agents") 
+}
+System_Boundary(acv, "Interne à l'ACV"){
+    System_Boundary(odp, "Offices des poursuites"){
+        Person(pofp, "Employé", "Employé de l'administration cantonale habilité à délivrer un extrait du registre des poursuites")
+        System(arp, "Registre des poursuites", "Application interne qui contient le registre des poursuites")
+    }
+    System_Boundary(jup, "Autorités Habilitées"){
+        Person(pjp, "Employé", "Employé de l'administration cantonale habilité à vérifier une identité")
+        System(rcpers, "Registre des personnes", "Application pour vérifier et créer la preuve d'identité")
+    }
+    System(iam, "IAM", "Application gestion des identités et des accès.") 
+    System(hub, "Hub", "Agent/Hub")   
+}
+System_Boundary(id_key, "[Couche 1] identifiants et clés"){
+    System_Ext(did_m, "methode", "DID Method")
+    System_Ext(did_r, "Registre", "Registre décentralisé")  
+}
+
+Rel(usa, age, "S'identifie")
+Rel(usa, pvd, "Crée une demande")
+Rel(pofp, arp, "Crée l'extrait")
+Rel(pofp, iam, "S'identifie")
+Rel(age, id_key, "Vérifie")
+Rel(waet, age, "Lit les preuves")
+Rel(pjp, rcpers, "Crée la preuve d'dentité")
+Rel(pjp, iam, "S'identifie")
+Rel(arp, hub, "Crée la preuve")
+Rel(rcpers, hub, "Crée la preuve")
+Rel(hub,id_key , "Ecrit")
+Rel(pep,arp , "Notifie la demande")
+Rel(peid,rcpers , "Notifie la demande")
+@enduml
