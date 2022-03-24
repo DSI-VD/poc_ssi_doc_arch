@@ -13,7 +13,7 @@
 	"repoUrl": "",
 	"docsifyTemplate": "",
 	"webPort": "3000",
-	"pdfCss": "/usr/lib/node_modules/c4builder/pdf.css",
+	"pdfCss": "./css/pdf.css",
 	"includeBreadcrumbs": true,
 	"includeLinkToDiagram": true,
 	"diagramsOnTop": true,
