@@ -11,4 +11,4 @@ ports:
   onOpen: open-preview
 
 tasks:
-- command: npm --version
+- command: c4builder site
