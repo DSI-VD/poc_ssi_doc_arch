@@ -18,6 +18,7 @@
 .buildlog/
 .history
 .svn/
+.out/
 
 # Various IDEs and Editors
 .vscode/
