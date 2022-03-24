@@ -1,0 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
+vscode:
+  extensions:
+    - sndst00m.vscode-native-svg-preview
+    - jebbs.plantuml
+    - tomoki1207.pdf
+ports:
+- port: 3000
+  onOpen: open-preview
+
+tasks:
+- command: c4builder site

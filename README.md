@@ -4,6 +4,12 @@
 
 La documentation d'architecture du POC se construit en utilisant une visualisation de type [C4 model](https://c4model.com). L'outil pour générer cette documentation est C4Builder qui utilise (entre autres) PlantUml et C4-PlantUML. Il est aussi possible de créer les diagrammes directement avec PlantUml, il n'y a donc pas de dépendance sur C4Builder.
 
+## GitPod
+
+GitPod permet d'avoir un environnement distant
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/DSI-VD/poc_ssi_doc_arch)
+
 ## Prérequis
 * Installer [nodejs](https://nodejs.org/en/)
 * Installer C4Builder `npm i -g c4builder`
