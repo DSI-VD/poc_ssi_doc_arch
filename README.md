@@ -35,6 +35,13 @@ GitPod permet d'avoir un environnement distant sans à avoir à installer les ou
 
 * Commande: `c4builder`
 
+#### Générer un diagramme sans c4builder en utilisant plantuml
+
+Exemple qui génère le diagramme de contexte dans le répertoire *$HOME/Téléchargements* au formet *svg*
+
+`java -jar ~/bin/plantuml-1.2022.2.jar -tsvg ./poc_ssi_doc_arch/src/context.puml -o $HOME/Téléchargements`
+
+[Documentation et détails](https://plantuml.com/fr/command-line)
 
 ### Visualisation
 
