@@ -12,6 +12,7 @@ System_Ext(waet,"[Portefeuille]Contient les preuves et les clés de l'usager")
 System_Boundary(pvd, "Portail sécurisé [https://prestations.vd.ch/]"){
     System(pep, "Prestation", "Prestation demande d'un extrait des poursuites") 
     System(peid, "Prestation", "Prestation demande d'une identité")
+    System(iam_c, "IAM-Cyber", "Application gestion des identités et des accès Cyber") 
     System(age, "Agent", "[Couche 2] Agents") 
 }
 System_Boundary(acv, "Interne à l'ACV"){
@@ -23,7 +24,7 @@ System_Boundary(acv, "Interne à l'ACV"){
         Person(pjp, "Employé", "Employé de l'administration cantonale habilité à vérifier une identité")
         System(rcpers, "Registre des personnes", "Application pour vérifier et créer la preuve d'identité")
     }
-    System(iam, "IAM", "Application gestion des identités et des accès.") 
+    System(iam, "IAM", "Application gestion des identités et des accès ACV.") 
     System(hub, "Hub", "Agent/Hub")   
 }
 System_Boundary(id_key, "[Couche 1] identifiants et clés"){
@@ -44,4 +45,5 @@ Rel(rcpers, hub, "Crée la preuve")
 Rel(hub,id_key , "Ecrit")
 Rel(pep,arp , "Notifie la demande")
 Rel(peid,rcpers , "Notifie la demande")
+Rel(age,iam_c,"Vérifie, onboarding")
 @enduml

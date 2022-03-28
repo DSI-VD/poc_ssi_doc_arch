@@ -20,7 +20,7 @@ GitPod permet d'avoir un environnement distant sans à avoir à installer les ou
 ### Optionnel
 * Installer [PlantUML](https://plantuml.com/fr/starting)
 * Installer [VsCode](https://code.visualstudio.com/) 
-* Installer [Plugin VSCODE](https://github.com/qjebbs/vscode-plantuml) ou dans vscode (ctlr+P) est la commande `ext install plantuml`
+* Installer [Plugin VSCODE](https://github.com/qjebbs/vscode-plantuml) ou dans vscode (ctlr+shift+P) et la commande `ext install plantuml`
 
 ## HowTo
 
@@ -40,4 +40,4 @@ GitPod permet d'avoir un environnement distant sans à avoir à installer les ou
 
 * Site web local command `c4builder site` [ouvrir](http://localhost:3000)
 * PDF ouvrir `./doc/poc_ssi_doc_arch/POC-SSI documentation.pdf`
-* Dans l'éditeur VsCode la touche *alt+d*
+* Dans l'éditeur VsCode la touche *alt+d* ou *ctlr+shift+P* puis la commande `Plantuml: Prévisualiser le diagramme`
